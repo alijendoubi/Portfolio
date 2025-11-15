@@ -40,7 +40,8 @@ portfolio/
 
 1. **Clone the repository**
    ```bash
-   cd ~/desktop/Portfolio
+   git clone https://github.com/alijendoubi/Portfolio.git
+   cd Portfolio
    ```
 
 2. **Install dependencies**
