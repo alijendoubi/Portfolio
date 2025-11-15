@@ -6,6 +6,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 
@@ -24,17 +25,22 @@ const Header: React.FC = () => {
   const isActive = (path: string) => router.pathname === path;
   
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-dark-600/50">
+    <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-dark-600/50 py-[10px]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500 to-accent-cyan flex items-center justify-center">
-              <span className="text-white font-bold text-xl">A</span>
+          <Link href="/" className="flex items-center space-x-4 group">
+            <div className="relative w-24 h-24 transition-transform duration-300 group-hover:scale-110">
+              <Image
+                src="/logo.png"
+                alt="Portfolio Logo"
+                width={96}
+                height={96}
+                className="object-contain"
+                priority
+              />
             </div>
-            <span className="text-xl font-bold text-neon">Portfolio</span>
           </Link>
-          
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (

@@ -49,10 +49,24 @@ const config: Config = {
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in',
         'fade-in-up': 'fadeInUp 0.8s ease-out',
+        'fade-in-down': 'fadeInDown 0.8s ease-out',
+        'fade-in-left': 'fadeInLeft 0.8s ease-out',
+        'fade-in-right': 'fadeInRight 0.8s ease-out',
         'slide-in-right': 'slideInRight 0.5s ease-out',
+        'slide-in-left': 'slideInLeft 0.5s ease-out',
+        'slide-up': 'slideUp 0.6s ease-out',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
+        'glow-pulse': 'glowPulse 3s ease-in-out infinite',
         'float': 'float 6s ease-in-out infinite',
+        'float-slow': 'floatSlow 8s ease-in-out infinite',
+        'bounce-slow': 'bounceSlow 3s ease-in-out infinite',
+        'spin-slow': 'spin 8s linear infinite',
+        'ping-slow': 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+        'blob': 'blob 7s infinite',
+        'blob-slow': 'blobSlow 9s infinite',
+        'shimmer': 'shimmer 2s linear infinite',
+        'wave': 'wave 2.5s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -63,17 +77,92 @@ const config: Config = {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        fadeInDown: {
+          '0%': { opacity: '0', transform: 'translateY(-20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeInLeft: {
+          '0%': { opacity: '0', transform: 'translateX(-20px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        fadeInRight: {
+          '0%': { opacity: '0', transform: 'translateX(20px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
         slideInRight: {
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(0)' },
+        },
+        slideInLeft: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(100%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
         },
         glow: {
           '0%': { boxShadow: '0 0 5px #0078ff, 0 0 10px #0078ff, 0 0 15px #0078ff' },
           '100%': { boxShadow: '0 0 10px #0078ff, 0 0 20px #0078ff, 0 0 30px #0078ff' },
         },
+        glowPulse: {
+          '0%, 100%': { boxShadow: '0 0 5px #0078ff, 0 0 10px #0078ff', opacity: '1' },
+          '50%': { boxShadow: '0 0 20px #0078ff, 0 0 40px #0078ff, 0 0 60px #0078ff', opacity: '0.8' },
+        },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
+        },
+        floatSlow: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-30px)' },
+        },
+        bounceSlow: {
+          '0%, 100%': { 
+            transform: 'translateY(0)',
+            animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+          },
+          '50%': { 
+            transform: 'translateY(-25%)',
+            animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+          },
+        },
+        blob: {
+          '0%': {
+            transform: 'translate(0px, 0px) scale(1)',
+          },
+          '33%': {
+            transform: 'translate(30px, -50px) scale(1.1)',
+          },
+          '66%': {
+            transform: 'translate(-20px, 20px) scale(0.9)',
+          },
+          '100%': {
+            transform: 'translate(0px, 0px) scale(1)',
+          },
+        },
+        blobSlow: {
+          '0%': {
+            transform: 'translate(0px, 0px) scale(1) rotate(0deg)',
+          },
+          '33%': {
+            transform: 'translate(-40px, 30px) scale(1.15) rotate(120deg)',
+          },
+          '66%': {
+            transform: 'translate(30px, -30px) scale(0.85) rotate(240deg)',
+          },
+          '100%': {
+            transform: 'translate(0px, 0px) scale(1) rotate(360deg)',
+          },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-1000px 0' },
+          '100%': { backgroundPosition: '1000px 0' },
+        },
+        wave: {
+          '0%, 100%': { transform: 'rotate(0deg)' },
+          '25%': { transform: 'rotate(15deg)' },
+          '75%': { transform: 'rotate(-15deg)' },
         },
       },
       boxShadow: {
